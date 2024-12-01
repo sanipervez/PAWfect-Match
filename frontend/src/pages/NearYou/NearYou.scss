@@ -1,8 +1,23 @@
-$background-color: #FFCA93;
-$card-background-color: #f3e1d2;
-$text-color: #fff;
-$shadow-color: rgba(0, 0, 0, 0.2);
-$overlay-color: rgba(0, 0, 0, 0.3);
+$background-color: #fffaf0;
+$card-background-color: #FFCA93; //#FFCA93
+$text-color: #230007;
+$shadow-color: #FFCA93;
+$overlay-color: #fffaf0;
+
+.rightPaw {
+  width: 70px; 
+  height: 70px; 
+  margin-left: 800px;
+  margin-bottom: -50px;
+  
+}
+.leftPaw {
+  width: 50px;  
+  height: 50px; 
+  margin-left: 680px; 
+  margin-bottom: -80px;
+}
+
 
 .pet-gallery {
   text-align: center;
@@ -10,44 +25,70 @@ $overlay-color: rgba(0, 0, 0, 0.3);
   padding: 90px 200px 90px;
 
   h2 {
-    font-size: 40px;
+    font-weight: bold;
+    font-size: 48px;
     color: $text-color;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
   }
 
   .pet-cards {
+    
     display: flex;
     justify-content: center;
     gap: 20px;
 
     .pet-card {
-      width: 150px;
-      border-radius: 8px;
-      overflow: hidden;
+      position: relative;
+      width: 220px;
       background-color: $card-background-color;
-      box-shadow: 0 4px 8px $shadow-color;
+      border-radius: 10px;
+      height: 320px;  
+      background-color: #ECE2D8;  // Set the background color of the card
+      z-index: 1;
 
-      img {
-        width: 100%;
-        height: 150px;
-        object-fit: cover;
-      }
-
+      /* Background image applied to the pet card */
+      background-image: url('/Users/saniapervez/PAWfect-Match/frontend/src/pages/NearYou/Ellipse 1.png'); /* Path to the background image */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-position: center 80%; 
+      background-size: 160px;
+      z-index: 2;
+      
       .pet-name {
-        font-size: 20px;
+        position: relative;
+        font-size: 25px;
         color: $text-color;
         font-weight: bold;
-        background-color: $overlay-color;
         padding: 8px 0;
         text-align: center;
+        z-index: 1; /* Ensure text stays on top */
+      }
+
+      img {
+        width: 180px;
+        height: 210px;
+        object-fit: cover;
+        z-index: 1; /* Make sure the image stays above the background */
+        position: relative;
+        border-radius: 10px;
+        margin-top: 10px;
       }
     }
+  }
+  .lastPaw{
+    width: 70px; 
+    height: 70px; 
+    margin-right: 800px;
+    margin-bottom: -40px;
+    margin-top: -10px;
   }
 
   p {
     font-size: 30px;
     color: $text-color;
-    margin-top: 20px;
+    margin-top: 60px;
     font-weight: bold;
   }
 }
+

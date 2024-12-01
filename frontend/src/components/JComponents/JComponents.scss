@@ -1,35 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 .jc-container {
   align-items: center;
   align-content: center;
   display: flex;
   flex-direction: column;
+  font-weight: bold;
+  color: #230007;
+  padding-bottom: 10px ;
 }
 
 .button-container {
   margin-top: 7.5%;
   display: flex;
+  align-content: center;
+  padding-bottom: 50px;
 }
 
 .first,
 .second,
 .third {
-  margin-left: 25px;
-  margin-right: 25px;
+  //border-color: solid 10px #f5b26b;
+  font-size: 20px;
+  margin-left: 5rem;
+  margin-right: 5rem;
+  p {
+    margin-top: 0.75rem;
+  }
+}
+
+.first {
+  margin-top: -4rem;
+}
+
+.third {
+  margin-top: -2rem;
 }
 
 .first-button,
 .second-button,
 .third-button {
-  width: 75px;
-  height: 75px;
+  width: 6rem;
+  height: 6rem;
   border-radius: 50%;
-  background-color: #bfa697;
+  background-color: #FFCA93;
   color: #fff;
 }
 
 .survey-button {
-  border-radius: 20px;
-  background-color: #f5b26b;
-  color: #fff;
+  border-radius: 10px;
+  background-color: #390510;
+  color: #fffaf0;
   margin-top: 50%;
+  margin-bottom: 50%;
+  padding: 0.5rem;
+  border: none;
+  font-weight: bold;
+  
 }

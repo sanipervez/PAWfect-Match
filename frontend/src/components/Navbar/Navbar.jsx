@@ -1,57 +1,97 @@
-import './Navbar.scss';
-import Dropdown from './Dropdown';
-import Button from './Button';
-import Login from '../../components/Login/Login'
-import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import "./Navbar.scss";
+import Login from "../../components/Login/Login";
+import { Link } from "react-router-dom";
+import { useState } from "react";
+import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import leftPaw from '/Users/saniapervez/PAWfect-Match/frontend/src/assets/leftPaw.png';
 
-function Navbar() {
-  const [click, setClick] = useState(false);
-  const [hoveredCategory, setHoveredCategory] = useState(null); // Track the hovered category
-
-  const handleClick = () => setClick(!click);
-  const closeMobileMenu = () => setClick(false);
-
-  const onMouseEnter = (category) => {
-    setHoveredCategory(category);
-  };
-
-  const onMouseLeave = () => {
-    setHoveredCategory(null);
-  };
-
-  return (
-    <>
-      <nav className="navbar">
-        <Link to="/" className="nav-logo">
-          <img src="src/components/Navbar/pawfectlogo.png" alt="PAWfect Match Logo" />
-        </Link>
-
-        <div className="menu-icon" onClick={handleClick}>
-          <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
-        </div>
-
-        <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-          {/* Hover effect for each category */}
-          {['home', 'about', 'adapt'].map((category) => (
-            <li
-              key={category}
-              className="nav-item"
-              onMouseEnter={() => onMouseEnter(category)}
-              onMouseLeave={onMouseLeave}
+const Navbar = () => {
+    return (
+      <nav
+        className="navbar navbar-expand-lg"
+        style={{ backgroundColor: "#fffaf0" }}
+      >
+        <div className="container">
+          <Link
+            to="/" // Home or landing page link
+            className="navbar-brand"
+            style={{
+              fontFamily: "'Poppins', sans-serif",
+              fontWeight: 600,
+              fontSize: "35px",
+              color: "#390510",
+              backgroundImage: `url(${leftPaw})`, 
+              backgroundSize: "contain",
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "center left",
+              zIndex: 1,
+              paddingLeft: "50px",
+            }}
+          >
+            PAWfect Match
+          </Link>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarNav">
+            <ul className="navbar-nav mx-auto">
+              <li className="nav-item">
+                <Link
+                  to="/about" // Link to the About page
+                  className="nav-link"
+                  style={{ color: "#390510" }}
+                >
+                  About
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
+                  to="/SurveyPage" // Link to the Questionnaire page
+                  className="nav-link"
+                  style={{ color: "#390510" }}
+                >
+                  Questionnaire
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
+                  to="/budget" // Link to the Budget page
+                  className="nav-link"
+                  style={{ color: "#390510" }}
+                >
+                  Budget
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
+                  to="/petedu" // Link to the Pet EDU page
+                  className="nav-link"
+                  style={{ color: "#390510" }}
+                >
+                  Pet EDU
+                </Link>
+              </li>
+            </ul>
+            <button
+              className="btn btn-outline-dark ms-lg-3"
+              style={{ color: "#390510" }}
             >
-              <Link to="/" className="nav-links" onClick={closeMobileMenu}>
-                {category.charAt(0).toUpperCase() + category.slice(1)}
-              </Link>
-              {/* Show the dropdown only if the category is hovered */}
-              {hoveredCategory === category && <Dropdown category={category} />}
-            </li>
-          ))}
-        </ul>
-        <Login></Login>
+              Sign In
+            </button>
+          </div>
+        </div>
       </nav>
-    </>
-  );
-}
-     
-export default Navbar;
+    );
+  };
+  
+  export default Navbar;
+  

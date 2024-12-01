@@ -1,9 +1,14 @@
-.journey-container{
-    background-color: #DE9D76;
-    height: 80vh;
-    text-align: center;
-    font-size: 4.5rem;
-    font-weight: bold;
-    color: #fff;
-    margin-left: -20rem;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+.journey-container {
+  background-color: #fffaf0;
+  color: #390510;
+  text-align: center;
+  font-family: 'Poppins';
+}
+
+.journey-header {
+  font-size: 2.75rem;
+  font-weight: bold;
+  padding-top: 100px;
+  padding-bottom: 10px;
 }

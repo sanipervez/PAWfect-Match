@@ -6,8 +6,8 @@ import JComponents from "../../components/JComponents/JComponents";
 const Journey = () => {
   return (
     <div className="journey-container">
-        How your journey looks
-        <JComponents></JComponents>
+      <p className="journey-header">How Your Journey Will Look</p>
+      <JComponents></JComponents>
     </div>
   );
 };

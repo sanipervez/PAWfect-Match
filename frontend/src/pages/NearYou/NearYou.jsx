@@ -2,7 +2,9 @@ import React from 'react';
 import './NearYou.scss';
 import { useEffect, useState } from 'react';
 import supabase from '../../supabase/supabaseClient';
-import './NearYou.scss';
+import rightPaw from '/Users/saniapervez/PAWfect-Match/frontend/src/assets/rightPaw.png';
+import leftPaw from '/Users/saniapervez/PAWfect-Match/frontend/src/assets/leftPaw.png';
+
 
 const NearYou = () => {
   const [pets, setPets] = useState([]);
@@ -16,7 +18,7 @@ const NearYou = () => {
           .from('pets') //table to select from
           .select('name, pictures') //the columns to be selected follow this format: ('column1, column2, column3')
           .eq('species', 'Dog') //works as the WHERE clause in SQLs
-          .limit(5); //how many records do we want?
+          .limit(3); //how many records do we want?
 
         if (error) throw error;
         if (data != null) {
@@ -31,6 +33,8 @@ const NearYou = () => {
   return (
     <section>
       <div className="pet-gallery">
+        <img className="rightPaw" src={rightPaw} alt="" />
+        <img className='leftPaw' src={ leftPaw } alt="" />
         <h2>Pets Available Near You</h2>
         <div className="pet-cards">
           {pets.map((pet, index) => {
@@ -46,16 +50,20 @@ const NearYou = () => {
             const picture = picturesArray[0];
             return (
               <div className="pet-card" key={index}>
+               
                 <img src={picture} alt={pet.name || 'Adoptable Pet'} /> 
                 <div className="pet-name">{pet.name}</div>
               </div>
             );
           })}
         </div>
+        <img className='lastPaw' src={ leftPaw } alt="" />
         <p>Meet the 9,000+ adoptable pets in your area!</p>
+        
       </div>
     </section>
   );
 };
 
 export default NearYou;
+
